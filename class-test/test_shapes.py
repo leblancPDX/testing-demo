@@ -68,3 +68,4 @@ class TestShapes(unittest.TestCase):
         circle.print_name()
         sys.stdout = sys.__stdout__
         self.assertEqual("Circle\n", captured_output.getvalue())
+        
