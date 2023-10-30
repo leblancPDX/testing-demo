@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+.idea/
+kotlin/.gradle
+
 # Distribution / packaging
 .Python
 build/
