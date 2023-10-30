@@ -38,5 +38,4 @@ class FakeTimeProvider(private var localDateTime: LocalDateTime): TimeProvider {
     override fun getLocalDateTime(): LocalDateTime {
         return localDateTime
     }
-
 }

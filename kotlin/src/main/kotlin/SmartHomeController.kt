@@ -20,9 +20,9 @@ class SmartHomeController(private val timeUtils: TimeUtils,
         if (motionDetected && (timeOfDay == "Evening" || timeOfDay == "Night")) {
             turnOn()
         }
-        if (Duration.between(time, lastMotionTime).toMinutes() > 1 || timeOfDay == "Morning" || timeOfDay == "Afternoon") {
+        val minutesBetweenMotion = Duration.between(time, lastMotionTime).toMinutes()
+        if (minutesBetweenMotion > 1 || timeOfDay == "Morning" || timeOfDay == "Afternoon") {
             turnOff()
         }
     }
-
 }

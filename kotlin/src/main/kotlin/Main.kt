@@ -4,5 +4,5 @@ fun main() {
 
 fun exampleUsage() {
     val smartHomeController = SmartHomeController(TimeUtils(),LocalTimeProvider())
-    smartHomeController.actuateLights(true, BackyardLightSwitcher::turnOn, BackyardLightSwitcher::turnOff)
+    smartHomeController.actuateLights(true)
 }
