@@ -3,6 +3,6 @@ fun main() {
 }
 
 fun exampleUsage() {
-    val smartHomeController = SmartHomeController(TimeUtils(),LocalTimeProvider())
+    val smartHomeController = SmartHomeController(TimeUtils())
     smartHomeController.actuateLights(true)
 }

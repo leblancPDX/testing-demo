@@ -7,9 +7,41 @@ class PalindromeUtils {
      * @param candidate string to be checked
      * @return true if the candidate is a palindrome and false otherwise
      */
+
+
+
+
+
+
+
+
     fun isPalindrome(candidate: String): Boolean {
-        val lowercase = candidate.lowercase()
-        val simplifiedCandidate = lowercase.filter { it.isLetterOrDigit() }
-        return simplifiedCandidate == simplifiedCandidate.reversed()
+        return false
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

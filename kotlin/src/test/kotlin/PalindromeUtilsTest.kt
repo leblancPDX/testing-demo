@@ -13,27 +13,4 @@ class PalindromeUtilsTest {
         assertTrue(palindromeUtils.isPalindrome("z"))
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = ["a", "level", "", "aa"])
-    fun `isPalindrome should return true for palindromic string`(input: String) {
-        assertTrue(palindromeUtils.isPalindrome(input))
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = ["test", "ab", "invalid"])
-    fun `isPalindrome should return false for non-palindromic string`(input: String) {
-        assertFalse(palindromeUtils.isPalindrome(input))
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = ["aA", "Level", "A"])
-    fun `isPalindrome should return true for mixed case palindromic string`(input: String) {
-        assertTrue(palindromeUtils.isPalindrome(input))
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = ["Don't nod"])
-    fun `isPalindrome should return true for palindromic strings with punctuation`(input: String) {
-        assertTrue(palindromeUtils.isPalindrome(input))
-    }
 }

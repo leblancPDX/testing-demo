@@ -2,14 +2,15 @@ import java.time.LocalDateTime
 
 class TimeUtils {
 
-    fun getTimeOfDay(time: LocalDateTime): String {
-        if (time.hour >= 0 && time.hour < 6) {
+    fun getTimeOfDay(): String {
+        val time = LocalDateTime.now()
+        if (time.hour in 0..5) {
             return "Night"
         }
-        if (time.hour >= 6 && time.hour < 12) {
+        if (time.hour in 6..11) {
             return "Morning"
         }
-        if (time.hour >= 12 && time.hour < 18) {
+        if (time.hour in 12..17) {
             return "Afternoon"
         }
         return "Evening"

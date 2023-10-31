@@ -1,28 +1,25 @@
 import java.time.Duration
 import java.time.LocalDateTime
 
-class SmartHomeController(private val timeUtils: TimeUtils,
-                          private val timeProvider: TimeProvider) {
+class SmartHomeController(private val timeUtils: TimeUtils) {
 
     var lastMotionTime: LocalDateTime? = null
-        private set(value) { field = value}
+        private set
 
-    fun actuateLights(motionDetected: Boolean,
-                      turnOn: () -> Unit = BackyardLightSwitcher::turnOn,
-                      turnOff: () -> Unit = BackyardLightSwitcher::turnOff) {
-        val time = timeProvider.getLocalDateTime()
+    fun actuateLights(motionDetected: Boolean) {
+        val time = LocalDateTime.now()
 
         if (motionDetected) {
             lastMotionTime = time
         }
 
-        val timeOfDay = timeUtils.getTimeOfDay(time)
+        val timeOfDay = timeUtils.getTimeOfDay()
         if (motionDetected && (timeOfDay == "Evening" || timeOfDay == "Night")) {
-            turnOn()
+            BackyardLightSwitcher.turnOn()
         }
         val minutesBetweenMotion = Duration.between(time, lastMotionTime).toMinutes()
         if (minutesBetweenMotion > 1 || timeOfDay == "Morning" || timeOfDay == "Afternoon") {
-            turnOff()
+            BackyardLightSwitcher.turnOff()
         }
     }
 }
